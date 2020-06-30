@@ -321,14 +321,27 @@ class PageControl extends React.Component {
     this.state = {};
   }
 
-  handleClick = () => {
+  viewToday = () => {
+
+  }
+
+  viewSchedule = () => {
+
+  }
+
+  viewProduce = () => {
 
   }
 
   render() {
     return (
       <React.Fragment>
-        <div class="row">
+        <div className="row">
+          <button className="btn btn-primary" onClick={this.viewToday}>Today's Info</button>
+          <button className="btn btn-primary" onClick={this.viewSchedule}>View Schedule</button>
+          <button className="btn btn-primary" onClick={this.viewProduce}>View Produce</button>
+        </div>
+        <div className="row">
           <Today day={marketSchedule[this.day].day}
             location={marketSchedule[this.day].location}
             hours={marketSchedule[this.day].hours}
