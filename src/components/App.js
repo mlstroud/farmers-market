@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "./Header";
+import PageControl from "./PageControl";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <React.Fragment>
       <div class="container">
         <Header />
+        <PageControl />
       </div>
     </React.Fragment>
   );
