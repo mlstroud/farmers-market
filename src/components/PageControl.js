@@ -318,36 +318,59 @@ class PageControl extends React.Component {
     this.day = this.date.getDay();
     if (this.day === 5) { this.day = 6 }
     this.month = this.date.getMonth();
-    this.state = {};
+    this.state = {
+      currentPage: "today"
+    };
   }
 
   viewToday = () => {
-
+    this.setState(prevState => ({
+      currentPage: "today"
+    }));
   }
 
   viewSchedule = () => {
-
+    this.setState(prevState => ({
+      currentPage: "schedule"
+    }));
   }
 
   viewProduce = () => {
-
+    this.setState(prevState => ({
+      currentPage: "produce"
+    }));
   }
 
   render() {
-    return (
-      <React.Fragment>
-        <div className="row">
-          <button className="btn btn-primary" onClick={this.viewToday}>Today's Info</button>
-          <button className="btn btn-primary" onClick={this.viewSchedule}>View Schedule</button>
-          <button className="btn btn-primary" onClick={this.viewProduce}>View Produce</button>
-        </div>
-        <div className="row">
+    let currentDisplayedPage = null;
+    switch (this.state.currentPage) {
+      case "today":
+        currentDisplayedPage =
           <Today day={marketSchedule[this.day].day}
             location={marketSchedule[this.day].location}
             hours={marketSchedule[this.day].hours}
             booth={marketSchedule[this.day].booth}
             month={availableProduce[this.month].month}
             selection={availableProduce[this.month].selection} />
+        break;
+      case "schedule":
+        currentDisplayedPage = <Schedule />
+        break;
+      case "produce":
+        currentDisplayedPage = <Produce />
+        break;
+      default:
+        currentDisplayedPage = <Today />
+    }
+    return (
+      <React.Fragment>
+        <div className="row" id="button-bar">
+          <button className="btn btn-primary" onClick={this.viewToday}>Today's Info</button>
+          <button className="btn btn-primary" onClick={this.viewSchedule}>View Schedule</button>
+          <button className="btn btn-primary" onClick={this.viewProduce}>View Produce</button>
+        </div>
+        <div className="row" id="page-content">
+          {currentDisplayedPage}
         </div>
       </React.Fragment>
     );

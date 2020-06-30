@@ -16,3 +16,15 @@ code {
 .jumbotron {
   background-color: white !important;
 }
+
+.btn {
+  margin: 5px !important;
+}
+
+#button-bar {
+  justify-content: center;
+}
+
+#page-content {
+  text-align: center;
+}
