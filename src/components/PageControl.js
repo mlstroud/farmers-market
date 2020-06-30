@@ -357,10 +357,16 @@ class PageControl extends React.Component {
         currentDisplayedPage = <Schedule schedule={marketSchedule} />
         break;
       case "produce":
-        currentDisplayedPage = <Produce />
+        currentDisplayedPage = <Produce produce={availableProduce} />
         break;
       default:
-        currentDisplayedPage = <Today />
+        currentDisplayedPage =
+          <Today day={marketSchedule[this.day].day}
+            location={marketSchedule[this.day].location}
+            hours={marketSchedule[this.day].hours}
+            booth={marketSchedule[this.day].booth}
+            month={availableProduce[this.month].month}
+            selection={availableProduce[this.month].selection} />
     }
     return (
       <React.Fragment>
