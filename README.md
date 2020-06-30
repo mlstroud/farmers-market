@@ -9,7 +9,7 @@
 _React web application demonstrating a one page view and local state management for a local farm's schedule and seasonal produce._
 
 ## Diagram
-![Component Diagram](https://raw.githubusercontent.com/mlstroud/social-media-clone/master/FarmersMarket.png)
+![Component Diagram](https://raw.githubusercontent.com/mlstroud/farmers-market/master/FarmersMarket.png)
 
 ## Setup/Installation Requirements
 
