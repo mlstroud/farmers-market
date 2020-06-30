@@ -354,7 +354,7 @@ class PageControl extends React.Component {
             selection={availableProduce[this.month].selection} />
         break;
       case "schedule":
-        currentDisplayedPage = <Schedule />
+        currentDisplayedPage = <Schedule schedule={marketSchedule} />
         break;
       case "produce":
         currentDisplayedPage = <Produce />
