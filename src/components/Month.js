@@ -13,4 +13,9 @@ function Month(props) {
   );
 }
 
+Month.propTypes = {
+  month: PropTypes.string,
+  selection: PropTypes.arrayOf(PropTypes.string)
+}
+
 export default Month;

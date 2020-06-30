@@ -1,5 +1,6 @@
 import React from "react";
 import Month from "./Month";
+import PropTypes from "prop-types";
 
 function Produce(props) {
   return (
@@ -23,6 +24,11 @@ function Produce(props) {
       </table>
     </div>
   );
+}
+
+Produce.propTypes = {
+  month: PropTypes.string,
+  selection: PropTypes.arrayOf(PropTypes.string)
 }
 
 export default Produce;
